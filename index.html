@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>PwC Market Risk Lab Portfolio | Nikodem Bujalski</title>
+  <title>PwC Market Risk Lab | Nikodem Bujalski</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
     }
 
     .container {
-      max-width: 950px;
+      max-width: 900px;
       margin: 60px auto;
       padding: 40px;
       background: white;
@@ -59,14 +59,9 @@
     }
 
     .card h2 {
-      margin: 0 0 8px 0;
-      font-size: 22px;
-    }
-
-    .card p {
       margin: 0;
-      color: #555;
-      line-height: 1.5;
+      font-size: 22px;
+      font-weight: 700;
     }
 
     .footer {
@@ -75,49 +70,58 @@
       color: #777;
     }
 
-    .accent {
-      color: #d04a02;
-      font-weight: bold;
+    @media (max-width: 768px) {
+      .container {
+        margin: 25px 14px;
+        padding: 26px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .card h2 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>PwC Market Risk Lab Portfolio</h1>
+    <h1>PwC Market Risk Lab</h1>
 
     <p class="subtitle">
-      Analytical reports prepared by <strong>Nikodem Bujalski</strong> as part of the PwC Market Risk Lab.
-      The portfolio covers market data preparation, Value at Risk modelling, and option pricing.
+      Portfolio raportów analitycznych przygotowanych przez <strong>Nikodema Bujalskiego</strong>
+      w ramach programu PwC Market Risk Lab.
     </p>
 
     <div class="grid">
 
       <a class="card" href="Przygotowanie%20danych%20i%20eksploracja.html">
-        <h2>Market Data Preparation & Exploration</h2>
-        <p>
-          Data validation, exploratory analysis, market data consistency checks, and preparation for further risk modelling.
-        </p>
+        <h2>1. Przygotowanie i eksploracja danych rynkowych</h2>
       </a>
 
       <a class="card" href="Value%20at%20risk.html">
-        <h2>Value at Risk Modelling</h2>
-        <p>
-          Historical and parametric VaR, rolling and expanding windows, backtesting, and business interpretation of market risk.
-        </p>
+        <h2>2. Value at Risk</h2>
       </a>
 
       <a class="card" href="Wycena%20opcji.html">
-        <h2>Option Pricing</h2>
-        <p>
-          European option pricing using Black-Scholes, Monte Carlo simulation, Greeks, and market-based assumptions.
-        </p>
+        <h2>3. Wycena opcji</h2>
       </a>
 
     </div>
 
     <div class="footer">
-      Prepared in R Markdown / HTML as analytical case studies.
+      Raporty przygotowano w R Markdown / HTML.
     </div>
   </div>
 
