@@ -1908,7 +1908,37 @@ img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!importan
 @font-face {font-family: MathJax_Size3; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.9') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.9') format('opentype')}
 @font-face {font-family: MathJax_Size4; src: url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.9') format('woff'), url('https://mathjax.rstudio.com/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.9') format('opentype')}
 .MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
-</style></head>
+</style>
+
+<script>
+function removeDuplicateTOCItems() {
+  const seen = new Set();
+
+  document.querySelectorAll("#TOC .tocify-item").forEach(function (item) {
+    const key = item.getAttribute("data-unique") || item.textContent.trim();
+
+    if (seen.has(key)) {
+      item.remove();
+    } else {
+      seen.add(key);
+    }
+  });
+
+  document.querySelectorAll("#TOC ul").forEach(function (list) {
+    if (list.children.length === 0) {
+      list.remove();
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  removeDuplicateTOCItems();
+  setTimeout(removeDuplicateTOCItems, 500);
+  setTimeout(removeDuplicateTOCItems, 1500);
+});
+</script>
+
+</head>
 
 <body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
 
